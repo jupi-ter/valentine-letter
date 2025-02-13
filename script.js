@@ -1,12 +1,10 @@
-//->Made it by 1vanbrav0
-//Variables
+
 let mobile_media_query = window.matchMedia("(max-width: 400px)");
 let tablet_media_query = window.matchMedia(
   "(min-width: 400px) and (max-width: 600px)"
 );
 const notes = document.querySelectorAll(".js-note");
 
-//-> Function that resets the size of the notes.
 function recize_notes() {
   for (let i = 0; i < notes.length; i++) {
     if (notes[i].classList.contains("active")) {
@@ -19,7 +17,6 @@ function recize_notes() {
   }
 }
 
-//-> Main function that enables all the notes.
 function notes_ready() {
   gsap.to(".js-envelop-content", {
     height: "110%",
@@ -99,7 +96,6 @@ function notes_ready() {
   }
 }
 
-//-> Function that set up the up paper of the envelope.
 function set_up_paper() {
   var arr = [0, 0, 100, 0, 50, 61];
   gsap.set(".js-up-paper", {
@@ -124,7 +120,6 @@ function set_up_paper() {
   });
 }
 
-//-> Function that starts the up paper transition.
 function envelop_transition() {
   gsap.to(".js-up-paper", {
     bottom: "1%",
@@ -137,7 +132,6 @@ function envelop_transition() {
   document.querySelector(".js-up-paper").classList.remove("cursor");
 }
 
-//-> Function that allows cut the sticker.
 function sticker() {
   gsap.set(".js-sticker", { width: "20%", left: "-80%" });
   document.body.classList.remove("scissors");
